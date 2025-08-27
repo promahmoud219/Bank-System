@@ -1,0 +1,31 @@
+# ---- Build Artifacts ----
+/build/
+/BankSystem            # compiled binary output in project root
+*.o                    # object files
+*.a                    # static libraries
+*.so                   # shared libraries (Linux)
+*.dll                  # shared libraries (Windows, if cross-compiling)
+*.exe                  # executables (Windows, if cross-compiling)
+
+# ---- Local Environment / Secrets ----
+.env
+.env.*
+*.secret
+*.key
+*.pem
+*.crt
+
+# ---- Development / Editor ----
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ---- Logs / Temp ----
+*.log
+*.tmp
+
+# ---- OS Junk ----
+.DS_Store
+Thumbs.db
