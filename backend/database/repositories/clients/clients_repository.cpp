@@ -1,6 +1,7 @@
 // clients_repository.cpp
 
 #include <vector>
+#include <string_view>
 #include <fstream>
 #include <iostream>
 
@@ -11,6 +12,9 @@
 // #include "../../../libcore/crypto/crypto.hpp"
 #include "../../../domains/clients/types/types.hpp"
 // #include "../../../domains/clients/config/config.hpp"
+#include "../../../config/clients/clients_config.hpp"
+
+#include "../../../../frontend/ui/ui.hpp"
 
 //! this file deals with CRUDS {create, read, update, delete, save};
 
@@ -20,15 +24,15 @@ namespace database::clients_repository {
     //! this is the function that i made , commented it to paste chat's 
     //^ and i reused it when i decided to make versions = simple first, scalability second.
 
-    std::vector<clients::types::Client> load_all (const std::string& file_path)
+    std::vector<clients::types::Client> load_all ()
     {
         std::vector<clients::types::Client> clients;
         std::fstream file;
-        file.open(file_path, std::ios::in);
+        file.open(clients_config::file_path.data(), std::ios::in);
         if (file.is_open())
         {
             if (!file.is_open()) 
-                std::cerr << "Error: could not open file " << file_path << std::endl;
+                std::cerr << "Error: could not open file " << clients_config::file_path.data() << std::endl;
 
             std::string line = "";
             clients::types::Client client;
@@ -45,6 +49,21 @@ namespace database::clients_repository {
             file.close();
         }
         return clients;
+    }
+    
+    bool add(const clients::types::Client& client)
+    {
+
+        std::ofstream file(clients_config::file_path.data(), std::ios::app);
+        if (!file.is_open()) return false;
+
+        std::string serialized = clients::serialization::serialize(client, "#//#");
+        
+        file << serialized << "\n";
+        // file << encrypt(serialized) << "\n";
+        //^ Write: Serialize → Encrypt → Save to file
+        //^ Read: Load line from file → Decrypt → Deserialize
+        return true;
     }
 
     // bool save_all(const std::string& file_path, const std::vector<clients::types::Client>& clients)
@@ -96,17 +115,7 @@ namespace database::clients_repository {
     // }
 
 
-    // bool add(const std::string& file_path, const clients::types::Client& client)
-    // {
-    //     std::ofstream file(file_path, std::ios::app);
-    //     if (!file.is_open()) return false;
 
-    //     std::string serialized = clients::serialization::serialize(client, "#//#");
-    //     // file << encrypt(serialized) << "\n";
-    //     //^ Write: Serialize → Encrypt → Save to file
-    //     //^ Read: Load line from file → Decrypt → Deserialize
-    //     return true;
-    // }
 
     // bool remove(const std::string& file_path, const std::string& account_number)
     // {

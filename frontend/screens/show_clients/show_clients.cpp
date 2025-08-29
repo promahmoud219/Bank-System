@@ -11,12 +11,12 @@
 #include "../../ui/ui.hpp"
 #include "../../../backend/database/repositories/clients/clients_repository.hpp"
 
+
 namespace screens::show_clients {
 
     void show() {
         
-        std::string path = "assets/data/clients.txt";
-        std::vector<clients::types::Client> Clients = database::clients_repository::load_all(path); 
+        std::vector<clients::types::Client> Clients = database::clients_repository::load_all(); 
         std::string title = "Client List " + std::to_string(Clients.size()) + " Client(s)";  //! front-end -> UI
         ui::showHeader(title); //! UI in front-end
         ui::showTable(); 

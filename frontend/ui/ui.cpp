@@ -14,7 +14,9 @@ namespace ui {
     
     void showHeader (const std::string& title)
     {
-        std::cout << "\n\t\t\t\t" << title;
+        showDoubleLine();
+        std::cout << "\n\t\t\t\t" << title << "\n";
+        showDoubleLine();
     }
 
 
@@ -73,7 +75,7 @@ namespace ui {
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // flush leftover input
     }
 
-    void printClientRecord(clients::types::Client& client) 
+    void printClientRecord(const clients::types::Client& client) 
     {     
         std::cout << "\n\nThe following is the extracted client record:\n";     
         std::cout << "\nAccout Number: " << client.account_number;     
@@ -84,6 +86,10 @@ namespace ui {
     }
     
     
-    
+    void wait_for_enter() {
+        std::cout << "\nPress ENTER to continue...";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cin.get();
+    }
 
 }

@@ -14,5 +14,7 @@ namespace ui {
     void showMainMenueItems();
     void readNewClient(clients::types::Client& client);     
     void printClientRecord(const clients::types::Client& client);
+    void wait_for_enter();
+
 
 }
