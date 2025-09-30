@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Prerequisites
 *.d
 
@@ -39,3 +40,24 @@
 
 # debug information files
 *.dwo
+=======
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.VC.db
+*.VC.db-shm
+*.VC.db-wal
+*.ipch
+*.bak
+*.backup
+*.log
+
+# Build outputs
+*.exe
+*.obj
+*.pch
+*.pdb
+*.idb
+*.class
+>>>>>>> 50f91da (Initial commit with README.md)
