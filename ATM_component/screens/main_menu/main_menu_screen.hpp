@@ -3,11 +3,14 @@
 
 #include "../screen/screen.hpp"
 
-class MainMenu : public Screen{
+class MainMenuScreen : public Screen{
 public:
-	MainMenu() : Screen("Main Menu") {}
+	MainMenuScreen() : Screen("Main Menu") {}
 	void show() override;
 
 private:
 	void printMenuItems();
+	void showMenu();
+	void pressEnterToContinue();
+
 };

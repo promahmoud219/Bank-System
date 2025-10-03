@@ -3,10 +3,12 @@
 #pragma once
 #include "../screen/screen.hpp"
 
-class Deposit : public Screen {
+class DepositScreen : public Screen {
 public:
-	Deposit() : Screen("Deposit") {}
+	DepositScreen() : Screen("Deposit") {}
 	void show() override;
 private:
 	void printMenuItems();
+	void showMenu();
+
 };

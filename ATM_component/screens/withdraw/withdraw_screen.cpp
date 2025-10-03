@@ -1,10 +1,10 @@
 // withdraw.cpp
 
-#include "withdraw.hpp"
+#include "withdraw_screen.hpp"
 #include <iostream>
 #include "../../ui_utils/ui_utils.hpp"
 
-void Withdraw::show() {
+void WithdrawScreen::show() {
 	clear();
 	printHeader();
 	std::cout 

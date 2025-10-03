@@ -1,9 +1,9 @@
-//transfer.cpp
-
-#include "transfer.hpp"
+//transfer_screen.cpp
+#include <iostream>
+#include "transfer_screen.hpp"
 #include "../../ui_utils/ui_utils.hpp"
 
-void Transfer::show() {
+void TransferScreen::show() {
 	clear();
 	printHeader();
 	UiUtils::printLine();

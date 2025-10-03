@@ -18,10 +18,31 @@
     <ClCompile Include="Bank-System.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="ATM_component\screens\main_menu\main_menu.cpp">
+    <ClCompile Include="ATM_component\screens\main_menu\main_menu_screen.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="ATM_component\ui_utils\ui_utils.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\controllers\main_menu\main_menu_controller.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="core_library\input_validation\input_validation.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\screens\withdraw\withdraw_screen.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\screens\transfer\transfer_screen.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\screens\quick_withdraw\quick_withdraw_screen.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\screens\deposit\deposit_screen.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\screens\balance\balance_screen.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>

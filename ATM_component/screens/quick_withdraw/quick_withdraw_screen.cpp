@@ -1,10 +1,10 @@
 // quick_withdraw.cpp
 
 #include <iostream>
-#include "quick_withdraw.hpp"
+#include "quick_withdraw_screen.hpp"
 #include "../../ui_utils/ui_utils.hpp"
 
-void QuickWithdraw::showMenu{
+void QuickWithdrawScreen::showMenu() {
 	std::cout << "[1] 20		[2] 50   \n";
 	std::cout << "[3] 100		[4] 200  \n";
 	std::cout << "[5] 400		[6] 600  \n";
@@ -12,11 +12,10 @@ void QuickWithdraw::showMenu{
 	std::cout << "[9] Exit				 \n";
 };
 
-void QuickWithdraw::show() {
+void QuickWithdrawScreen::show() {
 	clear();
 	printHeader();
 	showMenu();
-	UiUtils::printLine();
-
+	UiUtils::printLine(); 
 }
 
