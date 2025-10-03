@@ -58,3 +58,9 @@
 *.pdb
 *.idb
 *.class
+
+# Ignore build outputs
+/x64/
+/Debug/
+/Release/
+/*.tlog
