@@ -14,14 +14,11 @@ public:
     void printHeader() const {
         std::cout << "==============================================";
         std::cout << "\n\t\t" << title << std::endl;
-        std::cout << "==============================================";
+        std::cout << "==============================================\n";
     }
 
     void clear() {
 		system("cls");  
     }
 
-    int readOption() {
-		return InputValidation::ReadNumberInRange("Select an option: ", 1, 5);
-    }
 };

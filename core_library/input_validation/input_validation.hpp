@@ -3,12 +3,10 @@
 
 class InputValidation {
 public:
-	static int ReadPositiveNumber(const std::string& prompt);
-	static std::string ReadString(const std::string& prompt);
-	static char ReadYesNo(const std::string& message);
-	static int ReadNumberInRange(const std::string& message, int min, int max);
-	static int ReadNumber(const std::string& message);
-	static bool AskYesNo(const std::string& prompt);
+	static int readPositiveInteger(const std::string& prompt);
+	static std::string readString(const std::string& prompt);
+	static char readYesNo(const std::string& message);
+	static int readIntegerInRange(const std::string& message, int min, int max);
+	static int readInteger(const std::string& message);
+	static bool askYesNo(const std::string& prompt);
 };
-
-
