@@ -1,8 +1,8 @@
 #include <iostream>
-#include "ATM_component/screens/main_menu/main_menu_screen.hpp"
+#include "ATM_component/views/main_menu/main_menu_view.hpp"
 
 int main()
 {
-	MainMenuScreen main_menu;
-	main_menu.show();
+	MainMenuView main_menu;
+	main_menu.render();
 }

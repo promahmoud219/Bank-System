@@ -5,5 +5,5 @@
 
 class MainMenuController {
 public:
-	void handleChoice(int choice);
+	void handleUserSelection(int choice);
 };
