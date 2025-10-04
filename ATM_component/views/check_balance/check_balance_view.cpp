@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include "check_balance_view.hpp"
 #include "../../ui_utils/ui_utils.hpp"

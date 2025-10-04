@@ -1,9 +1,7 @@
-// transfer_screen.hpp
-
 #pragma once 
-#include "../screen/screen.hpp"
-class TransferView : public Screen {
+#include "../base_view/base_view.hpp"
+class TransferView : public BaseView {
 public:
-	TransferView() : Screen("Transfer") {};
+	TransferView() : BaseView("Transfer") {};
 	void render() override;
 };

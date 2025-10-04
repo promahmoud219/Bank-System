@@ -1,13 +1,12 @@
-// Screen.hpp
 #pragma once
 #include <string>
 #include <iostream>
 #include "../../../core_library/input_validation/input_validation.hpp"
-class Screen {
+class BaseView {
 protected:
     std::string title;
 public:
-    Screen(const std::string& t) : title(t) {}
+    BaseView(const std::string& t) : title(t) {}
 
     virtual void render() = 0;  
 

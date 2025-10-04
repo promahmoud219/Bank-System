@@ -1,15 +1,14 @@
-// main_menu.hpp
 #pragma once
 
 #include "../base_view/base_view.hpp"
 
-class MainMenuView : public Screen{
+class MainMenuView : public BaseView {
 public:
-	MainMenuView() : Screen("Main Menu") {}
+	MainMenuView() : BaseView("Main Menu") {}
 	void render() override;
 
 private:
 	void printMenuItems();
-	void displayMenu(); 
+	void displayOptions(); 
 
-};
+}; 

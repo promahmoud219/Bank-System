@@ -1,5 +1,3 @@
-// quick_withdraw.cpp
-
 #include <iostream>
 #include "quick_withdraw_view.hpp"
 #include "../../ui_utils/ui_utils.hpp"
@@ -30,8 +28,6 @@ void QuickWithdrawView::promptForSelection() {
 		if (choice != last_item) {
 			UiUtils::pressEnterToContinue();
 			return;
-		}
-
-
+		}  
 	} while (choice != last_item);
 }

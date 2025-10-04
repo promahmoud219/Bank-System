@@ -1,11 +1,9 @@
-// ATM_component/controllers/main_menu/main_menu_controller.cpp
-
 #include "main_menu_controller.hpp"
-#include "../../screens/quick_withdraw/quick_withdraw_view.hpp"
-#include "../../screens/withdraw/withdraw_view.hpp"
-#include "../../screens/transfer/transfer_view.hpp"
-#include "../../screens/deposit/deposit_view.hpp"
-#include "../../screens/balance/check_balance_view.hpp"
+#include "../../views/quick_withdraw/quick_withdraw_view.hpp"
+#include "../../views/withdraw/withdraw_view.hpp"
+#include "../../views/transfer/transfer_view.hpp"
+#include "../../views/deposit/deposit_view.hpp"
+#include "../../views/check_balance/check_balance_view.hpp"
 #include "../../types/main_menu_options.hpp"
 
 void MainMenuController::handleUserSelection(int choice) {

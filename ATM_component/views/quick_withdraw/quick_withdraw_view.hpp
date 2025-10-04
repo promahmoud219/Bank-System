@@ -1,11 +1,9 @@
-// quick_withdraw.hpp
-
 #pragma once
-#include "../screen/screen.hpp"
+#include "../base_view/base_view.hpp"
 
-class QuickWithdrawView : public Screen {
+class QuickWithdrawView : public BaseView {
 public:
-	QuickWithdrawView() : Screen("Quick Withdraw") {}
+	QuickWithdrawView() : BaseView("Quick Withdraw") {}
 	void render() override;
 private:
 	void displayOptions();

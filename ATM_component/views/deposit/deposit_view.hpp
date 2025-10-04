@@ -1,11 +1,9 @@
-// deposit.hpp
-
 #pragma once
-#include "../screen/screen.hpp"
+#include "../base_view/base_view.hpp"
 
-class DepositView : public Screen {
+class DepositView : public BaseView {
 public:
-	DepositView() : Screen("Deposit") {}
+	DepositView() : BaseView("Deposit") {}
 	void render() override;
 private:
 	void printMenuItems();

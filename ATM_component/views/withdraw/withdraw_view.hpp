@@ -1,10 +1,8 @@
-// withdraw_screen.hpp
-
 #pragma once
-#include "../screen/screen.hpp"
+#include "../base_view/base_view.hpp"
 
-class WithdrawView : public Screen {
+class WithdrawView : public BaseView{
 public:
-	WithdrawView() : Screen("Withdraw") {}
+	WithdrawView() : BaseView("Withdraw") {}
 	void render() override;
 };
