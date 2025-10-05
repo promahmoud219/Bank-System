@@ -1,0 +1,110 @@
+# ============================
+# ?? General C/C++ Ignore Rules
+# ============================
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Linker files
+*.ilk
+
+# Debugger Files
+*.pdb
+*.idb
+*.dwo
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# ============================
+# ?? Visual Studio Specific
+# ============================
+
+.vs/
+*.user
+*.suo
+*.VC.db
+*.VC.db-shm
+*.VC.db-wal
+*.ipch
+*.bak
+*.backup
+*.log
+
+# ============================
+# ?? Build Directories
+# ============================
+
+# Common build output directories
+/x64/
+/x86/
+/Debug/
+/Release/
+/bin/
+/build/
+/obj/
+/out/
+
+# ============================
+# ?? Other temporary / generated
+# ============================
+
+*.tlog
+*.cache
+*.tmp
+*.db
+*.opendb
+*.intermediate
+*.manifest
+*.lastbuildstate
+
+# ============================
+# ?? IDE Specific
+# ============================
+
+# CLion / JetBrains
+.idea/
+cmake-build*/
+
+# VSCode
+.vscode/
+
+# ============================
+# ?? System files
+# ============================
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+`
