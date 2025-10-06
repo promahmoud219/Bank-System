@@ -1,7 +1,7 @@
 #include "login_view.hpp"
 #include "../controller/login_controller.hpp"
 #include "../../../Ui_Utils/ui_utils.hpp"
-#include "../../../main_menu/view/main_menu_view.hpp"
+#include "../../main_menu/view/main_menu_view.hpp"
 #include "../../../../core_library/input_validation/input_validation.hpp"
 
 void LoginView::render() {

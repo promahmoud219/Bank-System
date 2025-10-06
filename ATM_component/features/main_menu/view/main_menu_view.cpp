@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "main_menu_view.hpp"
-#include "../controller/main_menu/main_menu_controller.hpp"
+#include "../controller/main_menu_controller.hpp"
 #include "../../../Ui_Utils/ui_utils.hpp"
 #include "../../../../core_library/input_validation/input_validation.hpp"
 

@@ -48,6 +48,27 @@
     <ClCompile Include="ATM_component\views\login\login_view.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="ATM_component\features\check_balance\view\check_balance_view.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\deposit\view\deposit_view.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\login\view\login_view.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\main_menu\view\main_menu_view.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\quick_withdraw\view\quick_withdraw_view.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\transfer\view\transfer_view.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\withdraw\view\withdraw_view.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ATM_component\ui_utils\ui_utils.hpp">

@@ -1,8 +1,6 @@
-#include <iostream>
-#include "ATM_component/features/login/view/login_view.hpp"
+#include "ATM_component/ATM_gateway/ATM_gateway.hpp"
 
-int main()
-{
-	LoginView loginView;
-	loginView.render();
+int main() {
+    ATMGateway atm;
+    atm.start();
 }

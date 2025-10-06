@@ -1,0 +1,46 @@
+<ItemGroup>
+<ClCompile Include="ATM_component/features/check_balance/view/check_balance_view.cpp" />
+<ClCompile Include="ATM_component/features/deposit/controller/deposit_controller.cpp" />
+<ClCompile Include="ATM_component/features/deposit/view/deposit_view.cpp" />
+<ClCompile Include="ATM_component/features/login/controller/login_controller.cpp" />
+<ClCompile Include="ATM_component/features/login/view/login_view.cpp" />
+<ClCompile Include="ATM_component/features/main_menu/controller/main_menu_controller.cpp" />
+<ClCompile Include="ATM_component/features/main_menu/view/main_menu_view.cpp" />
+<ClCompile Include="ATM_component/features/quick_withdraw/view/quick_withdraw_view.cpp" />
+<ClCompile Include="ATM_component/features/transfer/controller/transfer_controller.cpp" />
+<ClCompile Include="ATM_component/features/transfer/view/transfer_view.cpp" />
+<ClCompile Include="ATM_component/features/withdraw/controller/withdraw_controller.cpp" />
+<ClCompile Include="ATM_component/features/withdraw/view/withdraw_view.cpp" />
+<ClCompile Include="ATM_component/ui_utils/ui_utils.cpp" />
+<ClCompile Include="core_library/input_validation/input_validation.cpp" />
+<ClCompile Include="account_component/application/useCases/deposit/deposit_useCase.cpp" />
+<ClCompile Include="account_component/application/useCases/login/login_useCase.cpp" />
+<ClCompile Include="account_component/application/useCases/transfer/transfer_useCase.cpp" />
+<ClCompile Include="account_component/application/useCases/withdraw/withdraw_useCase.cpp" />
+</ItemGroup>
+
+<ItemGroup>
+<ClInclude Include="ATM_component/features/check_balance/view/check_balance_view.hpp" />
+<ClInclude Include="ATM_component/features/deposit/controller/deposit_controller.hpp" />
+<ClInclude Include="ATM_component/features/deposit/view/deposit_view.hpp" />
+<ClInclude Include="ATM_component/features/login/controller/login_controller.hpp" />
+<ClInclude Include="ATM_component/features/login/view/login_view.hpp" />
+<ClInclude Include="ATM_component/features/main_menu/controller/main_menu_controller.hpp" />
+<ClInclude Include="ATM_component/features/main_menu/view/main_menu_view.hpp" />
+<ClInclude Include="ATM_component/features/quick_withdraw/view/quick_withdraw_view.hpp" />
+<ClInclude Include="ATM_component/features/transfer/controller/transfer_controller.hpp" />
+<ClInclude Include="ATM_component/features/transfer/view/transfer_view.hpp" />
+<ClInclude Include="ATM_component/features/withdraw/controller/withdraw_controller.hpp" />
+<ClInclude Include="ATM_component/features/withdraw/view/withdraw_view.hpp" />
+<ClInclude Include="ATM_component/session/session_manager.hpp" />
+<ClInclude Include="ATM_component/shared/base_view.hpp" />
+<ClInclude Include="ATM_component/types/main_menu_options.hpp" />
+<ClInclude Include="ATM_component/types/quick_withdraw_options.hpp" />
+<ClInclude Include="ATM_component/ui_utils/ui_utils.hpp" />
+<ClInclude Include="core_library/input_validation/input_validation.hpp" />
+<ClInclude Include="account_component/application/interfaces/IAccountRepository/repo_interface.hpp" />
+<ClInclude Include="account_component/application/useCases/deposit/deposit_useCase.hpp" />
+<ClInclude Include="account_component/application/useCases/login/login_useCase.hpp" />
+<ClInclude Include="account_component/application/useCases/transfer/transfer_useCase.hpp" />
+<ClInclude Include="account_component/application/useCases/withdraw/withdraw_useCase.hpp" />
+</ItemGroup>

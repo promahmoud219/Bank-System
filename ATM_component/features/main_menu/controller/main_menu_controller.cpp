@@ -1,10 +1,10 @@
 #include "main_menu_controller.hpp"
+#include "../types/main_menu_options.hpp"
 #include "../../quick_withdraw/view/quick_withdraw_view.hpp"
 #include "../../withdraw/view/withdraw_view.hpp"
 #include "../../transfer/view/transfer_view.hpp"
 #include "../../deposit/view/deposit_view.hpp"
 #include "../../check_balance/view/check_balance_view.hpp"
-
 
 void MainMenuController::handleUserSelection(int choice) const {
 	auto option = static_cast<MainMenuOptions>(choice);
