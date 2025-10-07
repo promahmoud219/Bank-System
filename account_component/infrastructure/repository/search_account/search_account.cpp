@@ -26,7 +26,7 @@ void AccountRepository::loadDataFromFile() {
         ss >> id >> clientId >> pin >> balance;
 
         if (!id.empty()) {
-            Account acc(id, clientId, pin, balance);
+            Account acc(id, clientId, balance, pin);
             accounts.push_back(acc);
         }
     }
@@ -37,7 +37,7 @@ void AccountRepository::loadDataFromFile() {
 
 Account* AccountRepository::searchAccount(const std::string& id) {
     for (auto& acc : accounts)
-        if (acc.getId() == id)
+        if (acc.getAccountID() == id)
             return &acc;
     return nullptr;
 }

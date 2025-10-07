@@ -1,13 +1,16 @@
-#include "logout_view.hpp"
 #include <iostream>
+#include "logout_view.hpp"
+#include "core_library/input_validation/input_validation.hpp"
+#include "ATM_component/features/logout/controller/logout_controller.hpp"
 
 void LogoutView::render() {
-    clear();
-    printHeader();
+    std::string msg = "\nAre you sure you want to log out?";
+	bool agree = InputValidation::askYesNo(msg);
 
-    std::cout << "\nLogging out...\n";
-    SessionManager::clear();
-
-    std::cout << "\n? You have been logged out successfully.\n";
-    UiUtils::pressEnterToContinue();
+    if (agree) {
+		LogoutController controller;
+        controller.handleLogout();
+    }
+    else 
+        std::cout << "Logout cancelled.\n";
 }

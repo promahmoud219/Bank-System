@@ -1,5 +1,6 @@
 #pragma once
 #include "account_component/entity/account.hpp"
+class Account;
 
 class SessionManager {
 private:

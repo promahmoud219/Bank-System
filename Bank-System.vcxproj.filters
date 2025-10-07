@@ -72,6 +72,9 @@
     <ClCompile Include="account_component/application/useCases/withdraw/withdraw_useCase.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="ATM_component\features\logout\controller\logout_controller.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ATM_component\ATM_gateway\ATM_gateway.cpp">

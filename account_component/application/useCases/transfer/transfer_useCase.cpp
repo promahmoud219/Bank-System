@@ -11,8 +11,8 @@ OperationResult TransferUseCase::execute(Account* sender, Account* receiver, dou
     receiver->deposit(amount);
 
     return OperationResult::Success(
-        "? Transfer successful from " + sender->getOwnerName() +
-        " to " + receiver->getOwnerName() + ".",
+        "? Transfer successful from " + sender->getAccountID() +
+        " to " + receiver->getAccountID() + ".",
         sender->getBalance()
     );
 }

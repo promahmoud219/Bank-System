@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="account_component\infrastructure\repository\search_account\search_account.cpp" />
     <ClCompile Include="ATM_component/features/check_balance/view/check_balance_view.cpp" />
     <ClCompile Include="ATM_component/features/deposit/controller/deposit_controller.cpp" />
     <ClCompile Include="ATM_component/features/deposit/view/deposit_view.cpp" />
@@ -140,13 +141,14 @@
     <ClCompile Include="ATM_component/features/withdraw/controller/withdraw_controller.cpp" />
     <ClCompile Include="ATM_component/features/withdraw/view/withdraw_view.cpp" />
     <ClCompile Include="ATM_component/ui_utils/ui_utils.cpp" />
+    <ClCompile Include="ATM_component\features\logout\controller\logout_controller.cpp" />
     <ClCompile Include="Bank-System.cpp" />
     <ClCompile Include="core_library/input_validation/input_validation.cpp" />
-    <ClInclude Include="ATM_component\ATM_gateway\ATM_gateway.cpp" />
     <ClCompile Include="account_component/application/useCases/deposit/deposit_useCase.cpp" />
     <ClCompile Include="account_component/application/useCases/login/login_useCase.cpp" />
     <ClCompile Include="account_component/application/useCases/transfer/transfer_useCase.cpp" />
     <ClCompile Include="account_component/application/useCases/withdraw/withdraw_useCase.cpp" />
+    <ClCompile Include="ATM_component\features\logout\view\logout_view.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ATM_component/features/check_balance/view/check_balance_view.hpp" />
@@ -173,6 +175,7 @@
     <ClInclude Include="account_component/application/useCases/login/login_useCase.hpp" />
     <ClInclude Include="account_component/application/useCases/transfer/transfer_useCase.hpp" />
     <ClInclude Include="account_component/application/useCases/withdraw/withdraw_useCase.hpp" />
+    <ClInclude Include="ATM_component\features\logout\view\logout_view.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

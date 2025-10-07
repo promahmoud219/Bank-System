@@ -12,33 +12,33 @@ void MainMenuController::handleUserSelection(int choice) const {
     switch (option) {
 	using enum MainMenuOptions;
     case QUICK_WITHDRAW: {
-        QuickWithdrawView screen;
-        screen.render();
+        QuickWithdrawView view;
+        view.render();
         break;
     }
     case WITHDRAW : {
-        WithdrawView screen;
-        screen.render();
+        WithdrawView view;
+        view.render();
         break;
     }
     case DEPOSIT: {
-        DepositView screen;
-        screen.render();
+        DepositView view;
+        view.render();
         break;
     }
     case CHECK_BALANCE: {
-        CheckBalanceView screen;
-        screen.render();
+        CheckBalanceView view;
+        view.render();
         break;
     }
     case TRANSFER: {
-        TransferView screen;
-        screen.render();
+        TransferView view;
+        view.render();
         break;
     }
     case LOGOUT: {
-        LogoutView screen;
-        screen.render();
+        LogoutView view;
+        view.render();
         break;
     }
     default:
