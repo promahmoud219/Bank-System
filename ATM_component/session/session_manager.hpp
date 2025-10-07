@@ -1,5 +1,5 @@
 #pragma once
-#include "../../domain/account/account.hpp"
+#include "account_component/entity/account.hpp"
 
 class SessionManager {
 private:

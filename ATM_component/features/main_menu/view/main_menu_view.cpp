@@ -1,9 +1,8 @@
 #include <iostream>
-
 #include "main_menu_view.hpp"
-#include "../controller/main_menu_controller.hpp"
-#include "../../../Ui_Utils/ui_utils.hpp"
-#include "../../../../core_library/input_validation/input_validation.hpp"
+#include "ATM_component/features/main_menu/controller/main_menu_controller.hpp"
+#include "ATM_component/Ui_Utils/ui_utils.hpp"
+#include "core_library/input_validation/input_validation.hpp"
 
 void MainMenuView::printMenuItems() const {
     std::cout << "\n\t[1] Quick Withdraw.";
@@ -27,7 +26,6 @@ void MainMenuView::render() {
             UiUtils::pressEnterToContinue();
         
     } while (choice != last_item);
-     
 }
 
 void MainMenuView::displayOptions() const {

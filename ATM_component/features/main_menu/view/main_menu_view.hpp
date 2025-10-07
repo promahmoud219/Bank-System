@@ -1,5 +1,5 @@
 #pragma once
-#include "../../../shared/base_view.hpp"
+#include "ATM_component/shared/base_view.hpp"
 
 class MainMenuView : public BaseView {
 public:

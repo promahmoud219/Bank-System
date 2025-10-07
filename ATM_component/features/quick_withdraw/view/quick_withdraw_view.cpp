@@ -1,8 +1,7 @@
 #include <iostream>
 #include "quick_withdraw_view.hpp"
-
-#include "../../../Ui_Utils/ui_utils.hpp"
-#include "../../../../core_library/input_validation/input_validation.hpp"
+#include "ATM_component/ui_utils/ui_utils.hpp"
+#include "core_library/input_validation/input_validation.hpp"
 
 void QuickWithdrawView::displayOptions() const {
 	std::cout << "[1] 100\t\t[2] 200\n";

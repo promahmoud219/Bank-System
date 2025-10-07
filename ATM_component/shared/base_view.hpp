@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
-#include "../../core_library/input_validation/input_validation.hpp"
+#include "core_library/input_validation/input_validation.hpp"
 
 class BaseView {
 private: // ??? protected

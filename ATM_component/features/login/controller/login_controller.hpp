@@ -3,5 +3,5 @@
 
 class LoginController{ 
 public:
-	bool handleLogin(const std::string& accountId, int pin);
+	bool handleLogin(const std::string& accountId, const std::string& pin) const;
 };
