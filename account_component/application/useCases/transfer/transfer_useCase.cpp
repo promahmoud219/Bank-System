@@ -10,9 +10,5 @@ OperationResult TransferUseCase::execute(Account* sender, Account* receiver, dou
     sender->withdraw(amount);
     receiver->deposit(amount);
 
-    return OperationResult::Success(
-        "? Transfer successful from " + sender->getAccountID() +
-        " to " + receiver->getAccountID() + ".",
-        sender->getBalance()
-    );
+    return OperationResult::Success("Transfer completed successfully");
 }

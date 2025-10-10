@@ -25,7 +25,7 @@ int InputValidation::readPositiveInteger(const std::string& prompt) {
 std::string InputValidation::readString(const std::string& prompt) {
     std::string input;
     std::cout << prompt;
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    //std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::getline(std::cin, input);
     return input;
 }

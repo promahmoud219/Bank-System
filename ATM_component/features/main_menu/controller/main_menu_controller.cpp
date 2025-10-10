@@ -1,11 +1,11 @@
 #include "main_menu_controller.hpp"
+#include "ATM_component/features/transactions/quick_withdraw/view/quick_withdraw_view.hpp"
+#include "ATM_component/features/transactions/withdraw/view/withdraw_view.hpp"
+#include "ATM_component/features/transactions/transfer/view/transfer_view.hpp"
+#include "ATM_component/features/transactions/deposit/view/deposit_view.hpp"
+#include "ATM_component/features/auth/logout/view/logout_view.hpp"
 #include "ATM_component/features/main_menu/types/main_menu_options.hpp"
-#include "ATM_component/features/quick_withdraw/view/quick_withdraw_view.hpp"
-#include "ATM_component/features/withdraw/view/withdraw_view.hpp"
-#include "ATM_component/features/transfer/view/transfer_view.hpp"
-#include "ATM_component/features/deposit/view/deposit_view.hpp"
 #include "ATM_component/features/check_balance/view/check_balance_view.hpp"
-#include "ATM_component/features/logout/view/logout_view.hpp"
 
 void MainMenuController::handleUserSelection(int choice) const {
 	auto option = static_cast<MainMenuOptions>(choice);

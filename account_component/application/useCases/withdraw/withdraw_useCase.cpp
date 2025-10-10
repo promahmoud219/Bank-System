@@ -1,12 +1,8 @@
 #include "withdraw_useCase.hpp"
 
 
-bool WithdrawUseCase::execute(Account& account, double amount) {
+OperationResult WithdrawUseCase::execute(Account& account, double amount) {
     if (!account.withdraw(amount))
-        return false;
-
-    /*repo.update(account);
-    transactionLogger.logWithdrawal(account.getAccountID(), amount);*/
-
-    return true;
+        return OperationResult::Failure("Balance is not sufficient");
+    return OperationResult::Success("Withdraw Successful");
 }

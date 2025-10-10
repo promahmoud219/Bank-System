@@ -1,33 +1,30 @@
 #include "account.hpp"
 #include <string>
 
-int Account::getAccountID() const { 
-    return accountID; 
+std::string Account::getAccountID() const { 
+    return _accountID; 
 }
 
-int Account::getClientID() const {
-    return clientID; 
+std::string Account::getClientID() const {
+    return _clientID; 
 }
 double Account::getBalance() const {
-    return balance; 
+    return _balance; 
 }
 
-std::string Account::getPassword() const {
-    return password; 
-}
-
-bool Account::checkPassword(const std::string& inputPass) const {
-    return password == inputPass;
+bool Account::checkPinCode(const std::string& inputPass) const {
+    return _pinCode == inputPass;
 }
 
 void Account::deposit(double amount) {
-    balance += amount; 
+    if (amount <= 0)
+        throw std::invalid_argument("Deposit amount must be positive.");
+    _balance += amount;
 }
 
 bool Account::withdraw(double amount) {
-    if (amount <= balance) {
-        balance -= amount;
-        return true;
-    }
-    return false;
+    if (amount <= 0 || amount > _balance)
+        return false;
+    _balance -= amount;
+    return true;
 }

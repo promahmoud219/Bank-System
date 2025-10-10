@@ -8,7 +8,7 @@ AccountRepository::AccountRepository() {
 }
 
 void AccountRepository::loadDataFromFile() {
-    std::ifstream file("data/accounts.csv");
+    std::ifstream file("account_component/infrastructure/database/accounts.csv");
 
     if (!file.is_open()) {
         std::cerr << "[AccountRepository] Warning: Could not open accounts.txt. Starting with empty list.\n";
@@ -32,7 +32,6 @@ void AccountRepository::loadDataFromFile() {
     }
 
     file.close();
-    std::cout << "[AccountRepository] Loaded " << accounts.size() << " accounts from file.\n";
 }
 
 Account* AccountRepository::searchAccount(const std::string& id) {

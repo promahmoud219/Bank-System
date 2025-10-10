@@ -1,7 +1,8 @@
 #pragma once
 #include "account_component/entity/account.hpp"
+#include "core_library/types/operation_result.hpp"
 
 class WithdrawUseCase {
 public:
-	bool execute(Account& account, double amount);
+	OperationResult execute(Account& account, double amount);
 };

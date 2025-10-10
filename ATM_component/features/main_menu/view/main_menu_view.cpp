@@ -1,7 +1,7 @@
 #include <iostream>
 #include "main_menu_view.hpp"
 #include "ATM_component/features/main_menu/controller/main_menu_controller.hpp"
-#include "ATM_component/Ui_Utils/ui_utils.hpp"
+#include "ATM_component/ui_utils/ui_utils.hpp"
 #include "core_library/input_validation/input_validation.hpp"
 
 void MainMenuView::printMenuItems() const {
@@ -14,18 +14,16 @@ void MainMenuView::printMenuItems() const {
 }
 
 void MainMenuView::render() {
-	MainMenuController controller;
-    int choice = 0;
-	int last_item = 6;
-    do
-    {
+    MainMenuController controller;
+    int choice = 0, logout = 6;
+
+    do {
         displayOptions();
-	    choice = InputValidation::readIntegerInRange("\nSelect an option : ", 1, last_item);
+	    choice = InputValidation::readIntegerInRange("\nSelect an option : ", 1, logout);
         controller.handleUserSelection(choice);
-        if (choice != last_item) 
-            UiUtils::pressEnterToContinue();
-        
-    } while (choice != last_item);
+        if (choice != logout)
+            return;
+    } while (choice != logout);
 }
 
 void MainMenuView::displayOptions() const {
