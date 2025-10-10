@@ -113,6 +113,7 @@
     <ClCompile Include="ATM_component\features\transactions\withdraw\controller\withdraw_controller.cpp" />
     <ClCompile Include="ATM_component\features\transactions\withdraw\presenter\withdraw_presenter.cpp" />
     <ClCompile Include="ATM_component\features\transactions\withdraw\view\withdraw_view.cpp" />
+    <ClCompile Include="ATM_component\shared\navigation_utils\navigation_utils.cpp" />
     <ClCompile Include="ATM_component\ui_utils\ui_utils.cpp" />
     <ClCompile Include="Bank-System.cpp" />
     <ClCompile Include="core_library\input_validation\input_validation.cpp" />
@@ -160,6 +161,7 @@
     <ClInclude Include="ATM_component\features\transactions\withdraw\view\withdraw_view.hpp" />
     <ClInclude Include="ATM_component\session\session_manager.hpp" />
     <ClInclude Include="ATM_component\shared\base_view.hpp" />
+    <ClInclude Include="ATM_component\shared\navigation_utils\navigation_utils.hpp" />
     <ClInclude Include="ATM_component\ui_utils\ui_utils.hpp" />
     <ClInclude Include="core_library\input_validation\input_validation.hpp" />
     <ClInclude Include="core_library\types\operation_result.hpp" />

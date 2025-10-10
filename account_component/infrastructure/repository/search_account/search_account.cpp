@@ -1,6 +1,7 @@
-#include "search_account.hpp"
+﻿#include "search_account.hpp"
 #include <fstream>
 #include <sstream>
+#include <filesystem>
 #include <iostream>
 
 AccountRepository::AccountRepository() {
@@ -8,7 +9,13 @@ AccountRepository::AccountRepository() {
 }
 
 void AccountRepository::loadDataFromFile() {
-    std::ifstream file("account_component/infrastructure/database/accounts.csv");
+    namespace fs = std::filesystem;
+
+    fs::path exePath = fs::current_path();  
+    fs::path dataPath = exePath / "account_component" / "infrastructure" / "database" / "accounts.csv";
+
+    std::ifstream file(dataPath);
+    //std::ifstream file("account_component/infrastructure/database/accounts.csv");
 
     if (!file.is_open()) {
         std::cerr << "[AccountRepository] Warning: Could not open accounts.txt. Starting with empty list.\n";

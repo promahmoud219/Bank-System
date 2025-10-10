@@ -9,7 +9,7 @@ void QuickWithdrawView::displayOptions() const {
 	std::cout << "[1] 100\t\t[2] 200\n";
 	std::cout << "[3] 400\t\t[4] 800\n";
 	std::cout << "[5] 1000\t[6] 1200\n";
-	std::cout << "[7] Exit\n";
+	std::cout << "[7] Back to main menu\n";
 };
 
 void QuickWithdrawView::render() {
@@ -17,22 +17,15 @@ void QuickWithdrawView::render() {
 	printHeader();
 	displayOptions();
 	UiUtils::printLine();
-	promptForSelection();
+	readUserChoice();
 }
 
-void QuickWithdrawView::promptForSelection() {
-	int choice;
-	do
-	{
-		choice = InputValidation::readIntegerInRange("\nSelect an option : ", QuickWithdrawOptions::QW_100, QuickWithdrawOptions::QW_BackToMainMenu);
-		if (choice != QuickWithdrawOptions::QW_BackToMainMenu) {
-			goToController(100); // 100 instead of choice to be fixed amount
-			return;
-		}  
-	} while (choice != QuickWithdrawOptions::QW_BackToMainMenu);
+void QuickWithdrawView::readUserChoice() {
+	int choice = InputValidation::readIntegerInRange("\nSelect an option : ", QuickWithdrawOptions::QW_100, QuickWithdrawOptions::QW_BackToMainMenu);
+	dispatchChoice(choice);
 }
 
-void QuickWithdrawView::goToController(int choice) {
+void QuickWithdrawView::dispatchChoice(int choice) {
 	QuickWithdrawController controller;
 	controller.handleQuickWithdraw(choice);
 }

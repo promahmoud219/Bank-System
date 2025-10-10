@@ -7,6 +7,6 @@ public:
 	void render() override;
 private:
 	void displayOptions() const;
-	void promptForSelection();
-	void goToController(int choice);
+	void readUserChoice();
+	void dispatchChoice(int choice);
 };

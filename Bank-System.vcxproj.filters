@@ -15,7 +15,109 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="**\*.cpp">
+    <ClCompile Include="account_component\application\useCases\transfer\transfer_useCase.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="account_component\application\useCases\withdraw\withdraw_useCase.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="account_component\entity\account.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="account_component\infrastructure\loggers\transaction_logger.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="account_component\infrastructure\repository\create_account\create_account.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="account_component\infrastructure\repository\delete_account\delete_account.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="account_component\infrastructure\repository\search_account\search_account.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="account_component\infrastructure\repository\update_account\update_account.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\auth\login\controller\login_controller.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\auth\login\presenter\login_presenter.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\auth\login\usecases\login_useCase.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\auth\login\view\login_view.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\auth\logout\controller\logout_controller.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\auth\logout\presenter\logout_presenter.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\auth\logout\view\logout_view.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\check_balance\presenter\check_balance_presenter.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\check_balance\view\check_balance_view.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\main_menu\controller\main_menu_controller.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\main_menu\presenter\main_menu_presenter.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\main_menu\view\main_menu_view.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\transactions\deposit\controller\deposit_controller.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\transactions\deposit\presenter\deposit_presenter.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\transactions\deposit\view\deposit_view.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\transactions\quick_withdraw\controller\quick_withdraw_controller.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\transactions\quick_withdraw\presenter\quick_withdraw_presenter.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\transactions\quick_withdraw\view\quick_withdraw_view.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\transactions\transfer\controller\transfer_controller.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\transactions\transfer\presenter\transfer_presenter.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\transactions\transfer\view\transfer_view.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\transactions\withdraw\controller\withdraw_controller.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\transactions\withdraw\presenter\withdraw_presenter.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\transactions\withdraw\view\withdraw_view.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\ui_utils\ui_utils.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Bank-System.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="core_library\input_validation\input_validation.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="**\*.cpp">
@@ -124,6 +226,117 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="**\*.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="account_component\application\useCases\deposit\deposit_useCase.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="account_component\application\useCases\transfer\transfer_useCase.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="account_component\application\useCases\withdraw\withdraw_useCase.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="account_component\entity\account.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="account_component\infrastructure\loggers\transaction_logger.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="account_component\infrastructure\repository\create_account\create_account.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="account_component\infrastructure\repository\delete_account\delete_account.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="account_component\infrastructure\repository\search_account\search_account.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="account_component\infrastructure\repository\update_account\update_account.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\auth\login\controller\login_controller.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\auth\login\presenter\login_presenter.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\auth\login\view\login_view.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\auth\logout\controller\logout_controller.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\auth\logout\presenter\logout_presenter.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\auth\logout\view\logout_view.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\check_balance\presenter\check_balance_presenter.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\check_balance\view\check_balance_view.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\main_menu\controller\main_menu_controller.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\main_menu\presenter\main_menu_presenter.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\main_menu\view\main_menu_view.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\transactions\deposit\controller\deposit_controller.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\transactions\deposit\presenter\deposit_presenter.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\transactions\deposit\view\deposit_view.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\transactions\quick_withdraw\controller\quick_withdraw_controller.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\transactions\quick_withdraw\presenter\quick_withdraw_presenter.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\transactions\quick_withdraw\view\quick_withdraw_view.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\transactions\transfer\controller\transfer_controller.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\transactions\transfer\presenter\transfer_presenter.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\transactions\transfer\view\transfer_view.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\transactions\withdraw\controller\withdraw_controller.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\transactions\withdraw\presenter\withdraw_presenter.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\transactions\withdraw\view\withdraw_view.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\ui_utils\ui_utils.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Bank-System.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="core_library\input_validation\input_validation.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\features\auth\login\usecases\login_useCase.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_component\shared\navigation_utils\navigation_utils.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -263,5 +476,14 @@
     <ClInclude Include="ATM_component\features\auth\login\types\login_result.hpp">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="ATM_component\features\auth\login\usecases\login_useCase.hpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="ATM_component\shared\navigation_utils\navigation_utils.hpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="account_component\infrastructure\database\accounts.csv" />
   </ItemGroup>
 </Project>
