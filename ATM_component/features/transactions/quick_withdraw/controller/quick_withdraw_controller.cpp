@@ -6,8 +6,9 @@
 #include "ATM_component/features/transactions/quick_withdraw/types/quick_withdraw_options.hpp"
 #include "ATM_component/features/main_menu/view/main_menu_view.hpp"
 #include "ATM_component/shared/navigation_utils/navigation_utils.hpp"
+#include "core_library/input_validation/input_validation.hpp"
 
-void QuickWithdrawController::handleQuickWithdraw(int choice) {
+void QuickWithdrawController::handle(int choice) {
 
     if (choice == QuickWithdrawOptions::QW_BackToMainMenu) 
 		NavigationUtils::goToMainMenu();
@@ -16,8 +17,10 @@ void QuickWithdrawController::handleQuickWithdraw(int choice) {
 	
     WithdrawUseCase useCase; 
     QuickWithdrawPresenter presenter;
-	        
-    OperationResult result = useCase.execute(*account, mapChoiceToAmount(choice));
+	bool confirm = InputValidation::askYesNo("Confirm withdraw of " + std::to_string(mapChoiceToAmount(choice)) + "?") ? "Yes" : "No";
+    OperationResult result;
+    if(confirm)
+        result = useCase.execute(*account, mapChoiceToAmount(choice));
 	presenter.present(result);
     NavigationUtils::goToMainMenu();
 }

@@ -7,6 +7,5 @@ public:
 	void render() override;
 private:
 	void displayOptions() const;
-	void readUserChoice();
 	void dispatchChoice(int choice);
 };

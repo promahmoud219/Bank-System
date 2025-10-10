@@ -166,10 +166,10 @@
     <ClInclude Include="core_library\input_validation\input_validation.hpp" />
     <ClInclude Include="core_library\types\operation_result.hpp" />
   </ItemGroup>
-  <!-- ملفات الموارد (لو احتجت) -->
   <ItemGroup>
-    <!-- لو عندك ملفات .rc أو موارد اضفها هنا -->
-    <None Include="account_component\infrastructure\database\accounts.csv" />
+	  <None Include="account_component\infrastructure\database\accounts.csv">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

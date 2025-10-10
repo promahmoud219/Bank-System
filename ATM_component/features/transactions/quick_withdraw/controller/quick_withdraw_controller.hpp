@@ -5,5 +5,5 @@ class QuickWithdrawController {
 private:
 	double mapChoiceToAmount(int choice) const;
 public:
-	void handleQuickWithdraw(int choice);
+	void handle(int choice);
 };

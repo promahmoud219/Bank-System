@@ -17,15 +17,11 @@ void QuickWithdrawView::render() {
 	printHeader();
 	displayOptions();
 	UiUtils::printLine();
-	readUserChoice();
-}
-
-void QuickWithdrawView::readUserChoice() {
 	int choice = InputValidation::readIntegerInRange("\nSelect an option : ", QuickWithdrawOptions::QW_100, QuickWithdrawOptions::QW_BackToMainMenu);
 	dispatchChoice(choice);
 }
 
 void QuickWithdrawView::dispatchChoice(int choice) {
 	QuickWithdrawController controller;
-	controller.handleQuickWithdraw(choice);
+	controller.handle(choice);
 }

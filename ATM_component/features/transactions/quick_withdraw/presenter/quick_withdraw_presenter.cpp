@@ -5,7 +5,8 @@
 #include "ATM_component/features/main_menu/view/main_menu_view.hpp"
 
 void QuickWithdrawPresenter::present(const OperationResult& result) const {
-	std::cout << "\nWithdraw done successfully \n";
+	if(result.success)
+		std::cout << "\nWithdraw done successfully \n";
 	UiUtils::pressEnterToContinue();
 }
 
