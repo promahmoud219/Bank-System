@@ -22,7 +22,7 @@ void QuickWithdrawController::run() const {
     double amount = mapChoiceToAmount(choice);
     
     if (!confirmWithdrawal(amount)) {
-        presentResult(OperationResult::Failure("Withdrawal cancelled by user."));
+        presentResult(OperationResult::Failure("Withdrawal cancelled."));
         return;
     }
     

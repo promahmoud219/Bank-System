@@ -1,7 +1,8 @@
 #include "withdraw_controller.hpp"
-#include "ATM_component/session/session_manager.hpp"
 #include "ATM_component/features/transactions/withdraw/presenter/withdraw_presenter.hpp"
 #include "ATM_component/features/transactions/withdraw/view/withdraw_view.hpp"
+#include "ATM_component/shared/navigation_utils/navigation_utils.hpp"
+#include "ATM_component/session/session_manager.hpp"
 #include "account_component/application/useCases/withdraw/withdraw_useCase.hpp"
 #include "account_component/entity/account.hpp"
 #include "core_library/input_reader/input_reader.hpp"
@@ -11,17 +12,24 @@
 
 void WithdrawController::run() {
 	renderView();
-	
-	auto account = getCurrentAccount();
-	if (!account) return;
-
 	double amount = InputReader::readPositiveInteger("\nEnter amount to withdraw: ");
+	
+
 	if (!confirmWithdrawal(amount)) {
-		presentResult(OperationResult::Failure("Withdrawal cancelled by user."));
+		presentResult(OperationResult::Failure("Withdrawal cancelled."));
 		return;
 	}
+
+	auto account = getCurrentAccount();
+	if (!account) {
+		presentResult(OperationResult::Failure("No active session. Please log in first."));
+		return;
+	}
+
 	auto result = performWithdraw(account, amount);
 	presentResult(result);
+	NavigationUtils::navigateToMainMenu();
+
 }
 
 OperationResult WithdrawController::performWithdraw(std::shared_ptr<Account>& account, double amount) const {
