@@ -11,28 +11,30 @@
 #include <iostream>
 
 void QuickWithdrawController::run() const {
-    displayView();
+    renderView();
     int choice = readUserChoice();
 
     if (isBackToMainMenu(choice)) {
-        NavigationUtils::goToMainMenu();
+        NavigationUtils::navigateToMainMenu();
         return;
-    }
+    }  
 
     double amount = mapChoiceToAmount(choice);
-    auto account = getCurrentAccount();
+    
     if (!confirmWithdrawal(amount)) {
-        handleCancelledWithdrawal();
+        presentResult(OperationResult::Failure("Withdrawal cancelled by user."));
+        return;
+    }
+    
+    auto account = getCurrentAccount();
+    if (!account) {
+		presentResult(OperationResult::Failure("No active session. Please log in first."));
         return;
     }
 
-    performWithdrawal(*account, amount);
-    NavigationUtils::goToMainMenu();
-}
-
-void QuickWithdrawController::handle(int choice) const {
-
-   
+    auto result = performWithdrawal(*account, amount);
+    presentResult(result);
+    NavigationUtils::navigateToMainMenu();
 }
 
 double QuickWithdrawController::mapChoiceToAmount(int choice) const {
@@ -47,7 +49,7 @@ double QuickWithdrawController::mapChoiceToAmount(int choice) const {
     }
 }
 
-void QuickWithdrawController::displayView() const {
+void QuickWithdrawController::renderView() const {
     QuickWithdrawView view;
     view.render();
     view.printOptions();
@@ -78,23 +80,18 @@ bool QuickWithdrawController::confirmWithdrawal(double amount) const {
     return InputReader::askYesNo("Confirm Withdraw of " + std::to_string(amount) + "?");
 }
 
-void QuickWithdrawController::handleCancelledWithdrawal() const {
-    QuickWithdrawPresenter presenter;
-    OperationResult result;
-    result.Failure("\nWithdrawal cancelled by user.\n");
-    presenter.present(result);
-    std::cin.get();
-}
-
-void QuickWithdrawController::performWithdrawal(Account& account, double amount) const {
+OperationResult QuickWithdrawController::performWithdrawal(Account& account, double amount) const {
     WithdrawUseCase useCase;
-    QuickWithdrawPresenter presenter;
 
-    std::cout << "\nExecuting withdrawal use case...\n";
 #ifdef DEBUG
+    std::cout << "\nExecuting withdrawal use case...\n";
     std::cin.get();
 #endif
 
-    OperationResult result = useCase.execute(account, amount);
+    return useCase.execute(account, amount);
+}
+
+void QuickWithdrawController::presentResult(OperationResult result) const {
+    QuickWithdrawPresenter presenter;
     presenter.present(result);
 }

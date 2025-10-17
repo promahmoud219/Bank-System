@@ -33,6 +33,12 @@ void LoginController::run() const {
 }
 
 void LoginController::displayLoginView() const {
+
+#ifdef DEBUG
+	std::cout << "\n[DEBUG] displayLoginView().\n";
+	std::cin.get();
+#endif
+
 	LoginView view;
 	view.render();
 }

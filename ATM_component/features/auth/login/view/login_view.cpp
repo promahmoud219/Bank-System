@@ -13,6 +13,3 @@ LoginInput LoginView::readLoginInput() {
     input.pinCode = InputReader::readString("Enter PIN: ");
     return input;
 }
-
-
-

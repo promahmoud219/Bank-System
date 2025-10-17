@@ -12,8 +12,12 @@ void LoginPresenter::present(LoginResult result) {
 		std::cout << "\nInvalid account number or PIN. Please try again.\n";
 		std::cin.get();
 	}
-	std::cout << "\nin present";
+	
+#ifdef DEBUG
+	std::cout << "\n[DEBUG] in present.\n";
 	std::cin.get();
+#endif
+
 	UiUtils::clear();
 	UiUtils::pressEnterToContinue();
 }

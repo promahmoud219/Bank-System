@@ -6,5 +6,4 @@ class WithdrawView : public BaseView{
 	void goToController(int amount);
 public:
 	WithdrawView() : BaseView("Withdraw") {}
-	void render() override;
 };

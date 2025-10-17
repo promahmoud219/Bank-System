@@ -13,6 +13,5 @@ void QuickWithdrawView::printOptions() const {
 };
 
 int QuickWithdrawView::readChoice() const {
-
 	int choice = InputReader::readIntegerInRange("\nSelect an option : ", QuickWithdrawOptions::QW_100, QuickWithdrawOptions::QW_BackToMainMenu);
 }
