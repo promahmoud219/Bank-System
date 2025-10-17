@@ -1,6 +1,7 @@
+#include <memory>
 #include "transfer_useCase.hpp"
 
-OperationResult TransferUseCase::execute(Account* sender, Account* receiver, double amount) const {
+OperationResult TransferUseCase::execute(std::shared_ptr<Account> sender, std::shared_ptr<Account> receiver, double amount) const {
     if (sender == nullptr || receiver == nullptr || amount <= 0)
         return OperationResult::Failure("? Invalid transfer parameters.");
 

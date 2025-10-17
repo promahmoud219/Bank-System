@@ -1,15 +1,13 @@
-/*
-bool FileAccountRepository::updateAccount(const Account& account) {
-    std::vector<Account> accounts = loadAllAccounts();
+#include "update_account.hpp"
 
-    for (auto& acc : accounts) {
-        if (acc.getId() == account.getId()) {
-            acc = account; // replace old with updated
-            saveAll(accounts);
-            return true;
-        }
-    }
-    return false;
+bool AccountRepository::updateAccount(const Account& account) {
+    //for (auto& acc : accounts) {
+    //    if (acc->getAccountID() == updatedAccount.getAccountID()) {
+    //        *acc = updatedAccount; 
+    //        saveAllToFile();       
+    //        return true;
+    //    }
+    //}
+    //return false;
+    return true;
 }
-
-*/

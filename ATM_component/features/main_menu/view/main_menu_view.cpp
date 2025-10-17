@@ -13,22 +13,5 @@ void MainMenuView::printMenuItems() const {
     std::cout << "\n\t[6] Logout.\n";
 }
 
-void MainMenuView::render() {
-    MainMenuController controller;
-    int choice = 0, logout = 6;
 
-    do {
-        displayOptions();
-	    choice = InputValidation::readIntegerInRange("\nSelect an option : ", 1, logout);
-        controller.handleUserSelection(choice);
-        if (choice != logout)
-            return;
-    } while (choice != logout);
-}
 
-void MainMenuView::displayOptions() const {
-    clear(); 
-    printHeader();
-    printMenuItems();
-    UiUtils::printLine();
-}

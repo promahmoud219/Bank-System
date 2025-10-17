@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-class InputValidation {
+class InputReader {
 public:
 	static int readPositiveInteger(const std::string& prompt);
 	static std::string readString(const std::string& prompt);

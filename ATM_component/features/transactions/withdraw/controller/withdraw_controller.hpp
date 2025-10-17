@@ -2,5 +2,5 @@
 
 class WithdrawController {
 public:
-	void handleWithdraw(int amount);
+	void run(int amount);
 };

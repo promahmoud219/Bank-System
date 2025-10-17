@@ -1,14 +1,22 @@
 #pragma once
 #include <string>
 #include <iostream>
-#include "core_library/input_validation/input_validation.hpp"
+#include <chrono>
+#include <ctime>
+#include "ATM_component/ui_utils/ui_utils.hpp"
 
 class BaseView {
-private: // ??? protected
+private:
     std::string title;
+    static void clear() {
+    #ifdef _WIN32
+            system("cls");
+    #else
+            system("clear");
+    #endif
+    }
 
-protected:
-    // ?? ????? ??????? ?????? ???????
+protected:  
     const std::string& getTitle() const { return title; }
 
     void printHeader() const {
@@ -17,13 +25,23 @@ protected:
         std::cout << "==============================================\n";
     }
 
-    void clear() const { // const ???
-        system("cls");
+    void showClock() const {
+        auto now = std::chrono::system_clock::now();
+        std::time_t time = std::chrono::system_clock::to_time_t(now);
+
+        std::string timeStr = std::ctime(&time);
+        if (!timeStr.empty() && timeStr.back() == '\n')
+            timeStr.pop_back();
+
+        std::cout << "Current time: " << timeStr << "\n";
     }
 
 public:
-    explicit BaseView(const std::string& t) : title(t) {} // explicit
-
-    virtual void render() = 0;
-
+    explicit BaseView(const std::string& t) : title(t) {}  
+    void render() const {        
+        clear();
+        printHeader();
+        showClock();
+        UiUtils::printLine();
+    }
 };

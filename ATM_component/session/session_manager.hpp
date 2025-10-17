@@ -1,25 +1,21 @@
 #pragma once
+#include <memory>
 #include "account_component/entity/account.hpp"
-class Account;
 
 class SessionManager {
 private:
-    static inline Account* currentAccount = nullptr;
-
+    static inline std::shared_ptr<Account> currentAccount = nullptr;
 public:
-    static void setCurrentAccount(Account* account) {
-        currentAccount = account;
+    static void setCurrentAccount(std::shared_ptr<Account> account) {
+        currentAccount = std::move(account);
     }
-
-    static Account* getCurrentAccount() {
+    static std::shared_ptr<Account> getCurrentAccount() {
         return currentAccount;
     }
-
     static void logout() {
-        currentAccount = nullptr;
+        currentAccount.reset();
     }
-
     static bool isLoggedIn() {
-        return currentAccount != nullptr;
+        return static_cast<bool>(currentAccount);
     }
 };

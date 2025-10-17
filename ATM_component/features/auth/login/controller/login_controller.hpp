@@ -1,9 +1,12 @@
 #pragma once
 #include <string>
 #include "core_library\types\operation_result.hpp"
-#include "ATM_component/features/auth/login/types/login_input.hpp"
 
 class LoginController{ 
+private:
+	bool handleLoginResult(LoginResult& result, LoginPresenter& presenter) const;
+	void displayLoginView() const;
+
 public:
-	void handleLogin(LoginInput& input) const;
+	void run() const;
 };

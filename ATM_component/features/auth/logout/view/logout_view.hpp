@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "ATM_component/shared/base_view.hpp"
+#include "ATM_component/shared/base_view/base_view.hpp"
 
 class LogoutView : public BaseView {
 

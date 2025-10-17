@@ -6,7 +6,7 @@
 
 void WithdrawView::render() {
 	showHeader();
-	int amount = InputValidation::readPositiveInteger("\nEnter amount: ");
+	int amount = InputReader::readPositiveInteger("\nEnter amount: ");
 	goToController(amount);
 }
 

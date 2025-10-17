@@ -1,6 +1,7 @@
 #pragma once
-#include "account_component/entity/account.hpp"
+#include <memory>
 #include <string>
+#include "account_component/entity/account.hpp"
 
 enum class LoginResultCode {
     SUCCESS,
@@ -9,25 +10,23 @@ enum class LoginResultCode {
 };
 
 struct LoginResult {
-    bool success;
-    LoginResultCode code;
-    Account* account = nullptr;
+    bool success = false;
+    LoginResultCode code = LoginResultCode::ACCOUNT_NOT_FOUND;
+    std::shared_ptr<Account> account = nullptr;
 
-    static LoginResult Success(Account* acc) {
-        return { true, LoginResultCode::SUCCESS, acc };
+    static LoginResult Success(std::shared_ptr<Account> acc) {
+        return { true, LoginResultCode::SUCCESS, std::move(acc) };
+    }
+    static LoginResult Failure(LoginResultCode c) {
+        return { false, c, nullptr };
     }
 
-    static LoginResult Failure(LoginResultCode code) {
-        return { false, code, nullptr };
-    }
-
-    // ? helper function to get human-readable message (optional)
     std::string getMessage() const {
         switch (code) {
-        case LoginResultCode::SUCCESS: return "? Login successful.";
-        case LoginResultCode::ACCOUNT_NOT_FOUND: return "? Account not found.";
-        case LoginResultCode::INVALID_PIN: return "? Incorrect PIN.";
-        default: return "? Unknown error.";
+        case LoginResultCode::SUCCESS: return "Login successful.";
+        case LoginResultCode::ACCOUNT_NOT_FOUND: return "Account not found.";
+        case LoginResultCode::INVALID_PIN: return "Incorrect PIN.";
+        default: return "Unknown error.";
         }
     }
 };

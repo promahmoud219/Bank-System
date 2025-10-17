@@ -1,5 +1,5 @@
 #pragma once 
 
 class DepositController {
-	void handleDeposit(double amount);
+	void run(double amount);
 };

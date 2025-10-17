@@ -5,8 +5,8 @@
 #include "ATM_component/session/session_manager.hpp"
 #include "ATM_component/features/transactions/withdraw/presenter/withdraw_presenter.hpp"
 
-void WithdrawController::handleWithdraw(int amount) {
-	Account* account = SessionManager::getCurrentAccount();
+void WithdrawController::run(int amount) {
+	std::shared_ptr<Account> account = SessionManager::getCurrentAccount();
 	WithdrawUseCase useCase; 
 	WithdrawPresenter presenter;
 	OperationResult result = useCase.execute(*account, amount);

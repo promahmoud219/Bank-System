@@ -1,18 +1,13 @@
 #include "login_useCase.hpp"
-#include "ATM_component/features/auth/login/types/login_result.hpp"
-#include "account_component/infrastructure/repository/search_account/search_account.hpp"
-#include "account_component/entity/account.hpp"
 #include "ATM_component/features/auth/login/types/login_input.hpp"
+#include "account_component/application/interfaces/IAccountRepository/repo_interface.hpp"
+#include <memory>
 
-LoginResult LoginUseCase::execute(LoginInput& input) const {
-    AccountRepository repo;
-    Account* acc = repo.searchAccount(input.accountID);
+LoginUseCase::LoginUseCase(std::shared_ptr<IAccountRepository> r) : repo(std::move(r)) {}
 
-    if (acc == nullptr)
-        return LoginResult::Failure(LoginResultCode::ACCOUNT_NOT_FOUND);
-
-    if (!acc->checkPinCode(input.pinCode))
-        return LoginResult::Failure(LoginResultCode::INVALID_PIN);
-
+LoginResult LoginUseCase::execute(const LoginInput& input) const {
+    std::shared_ptr<Account> acc = repo->searchAccount(input.accountID);
+    if (!acc) return LoginResult::Failure(LoginResultCode::ACCOUNT_NOT_FOUND);
+    if (!acc->checkPinCode(input.pinCode)) return LoginResult::Failure(LoginResultCode::INVALID_PIN);
     return LoginResult::Success(acc);
 }

@@ -1,7 +1,7 @@
 #include "deposit_useCase.hpp"
 #include "account_component/entity/account.hpp"
-
-OperationResult DepositUseCase::execute(Account* account, double amount) const {
+#include <memory>
+OperationResult DepositUseCase::execute(std::shared_ptr<Account> account, double amount) const {
     if (account == nullptr)
         return OperationResult::Failure("? Invalid account reference.");
 

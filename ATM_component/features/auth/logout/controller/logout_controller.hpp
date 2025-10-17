@@ -2,5 +2,5 @@
 
 class LogoutController {
 public:
-	void handleLogout ();
+	void run();
 };

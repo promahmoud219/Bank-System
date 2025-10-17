@@ -33,7 +33,7 @@
 <ClInclude Include="ATM_component/features/withdraw/controller/withdraw_controller.hpp" />
 <ClInclude Include="ATM_component/features/withdraw/view/withdraw_view.hpp" />
 <ClInclude Include="ATM_component/session/session_manager.hpp" />
-<ClInclude Include="ATM_component/shared/base_view.hpp" />
+<ClInclude Include="ATM_component/shared/base_view/base_view.hpp" />
 <ClInclude Include="ATM_component/types/main_menu_options.hpp" />
 <ClInclude Include="ATM_component/types/quick_withdraw_options.hpp" />
 <ClInclude Include="ATM_component/ui_utils/ui_utils.hpp" />

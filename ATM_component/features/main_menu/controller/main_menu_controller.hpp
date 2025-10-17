@@ -2,7 +2,7 @@
 
 
 class MainMenuController {
-public:
 	void handleUserSelection(int choice) const;
-};
-
+public:
+	void run() const;
+};	

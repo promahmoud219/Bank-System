@@ -3,26 +3,36 @@
 #include "account_component/application/useCases/withdraw/withdraw_useCase.hpp"
 #include "ATM_component/features/transactions/types/transaction_result.hpp"
 #include "ATM_component/features/transactions/quick_withdraw/presenter/quick_withdraw_presenter.hpp"
+#include "ATM_component/features/transactions/quick_withdraw/view/quick_withdraw_view.hpp"
 #include "ATM_component/features/transactions/quick_withdraw/types/quick_withdraw_options.hpp"
 #include "ATM_component/features/main_menu/view/main_menu_view.hpp"
 #include "ATM_component/shared/navigation_utils/navigation_utils.hpp"
-#include "core_library/input_validation/input_validation.hpp"
+#include "core_library/input_reader/input_reader.hpp"
+#include <iostream>
 
-void QuickWithdrawController::handle(int choice) {
+void QuickWithdrawController::run() const {
+    displayView();
+    int choice = readUserChoice();
 
-    if (choice == QuickWithdrawOptions::QW_BackToMainMenu) 
-		NavigationUtils::goToMainMenu();
+    if (isBackToMainMenu(choice)) {
+        NavigationUtils::goToMainMenu();
+        return;
+    }
 
-    Account* account = SessionManager::getCurrentAccount();
-	
-    WithdrawUseCase useCase; 
-    QuickWithdrawPresenter presenter;
-	bool confirm = InputValidation::askYesNo("Confirm withdraw of " + std::to_string(mapChoiceToAmount(choice)) + "?") ? "Yes" : "No";
-    OperationResult result;
-    if(confirm)
-        result = useCase.execute(*account, mapChoiceToAmount(choice));
-	presenter.present(result);
+    double amount = mapChoiceToAmount(choice);
+    auto account = getCurrentAccount();
+    if (!confirmWithdrawal(amount)) {
+        handleCancelledWithdrawal();
+        return;
+    }
+
+    performWithdrawal(*account, amount);
     NavigationUtils::goToMainMenu();
+}
+
+void QuickWithdrawController::handle(int choice) const {
+
+   
 }
 
 double QuickWithdrawController::mapChoiceToAmount(int choice) const {
@@ -37,4 +47,54 @@ double QuickWithdrawController::mapChoiceToAmount(int choice) const {
     }
 }
 
+void QuickWithdrawController::displayView() const {
+    QuickWithdrawView view;
+    view.render();
+    view.printOptions();
+}
 
+int QuickWithdrawController::readUserChoice() const {
+    return InputReader::readIntegerInRange(
+        "\nSelect an option : ",
+        QuickWithdrawOptions::QW_100,
+        QuickWithdrawOptions::QW_BackToMainMenu
+    );
+}
+
+bool QuickWithdrawController::isBackToMainMenu(int choice) const {
+    return choice == QuickWithdrawOptions::QW_BackToMainMenu;
+}
+
+std::shared_ptr<Account> QuickWithdrawController::getCurrentAccount() const {
+    auto account = SessionManager::getCurrentAccount();
+#ifdef DEBUG
+    std::cout << "\n[DEBUG] Account ID in session: " << account->getAccountID() << "\n";
+    std::cin.get();
+#endif
+    return account;
+}
+
+bool QuickWithdrawController::confirmWithdrawal(double amount) const {
+    return InputReader::askYesNo("Confirm Withdraw of " + std::to_string(amount) + "?");
+}
+
+void QuickWithdrawController::handleCancelledWithdrawal() const {
+    QuickWithdrawPresenter presenter;
+    OperationResult result;
+    result.Failure("\nWithdrawal cancelled by user.\n");
+    presenter.present(result);
+    std::cin.get();
+}
+
+void QuickWithdrawController::performWithdrawal(Account& account, double amount) const {
+    WithdrawUseCase useCase;
+    QuickWithdrawPresenter presenter;
+
+    std::cout << "\nExecuting withdrawal use case...\n";
+#ifdef DEBUG
+    std::cin.get();
+#endif
+
+    OperationResult result = useCase.execute(account, amount);
+    presenter.present(result);
+}

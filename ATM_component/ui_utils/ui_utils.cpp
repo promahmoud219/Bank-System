@@ -10,3 +10,7 @@ void UiUtils::pressEnterToContinue() {
     //std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cin.get();
 }
+
+void UiUtils::clear() {
+    std::system("cls");
+}

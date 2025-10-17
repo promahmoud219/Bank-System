@@ -3,5 +3,5 @@
 
 class TransferController {
 public:
-    void handleTransfer(const std::string& receiverID, double amount);
+    void run(const std::string& receiverID, double amount);
 };

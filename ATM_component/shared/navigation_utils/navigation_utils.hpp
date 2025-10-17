@@ -2,5 +2,5 @@
 
 class NavigationUtils {
 public:
-    static void goToMainMenu();
+    static void navigateToMainMenu();
 };

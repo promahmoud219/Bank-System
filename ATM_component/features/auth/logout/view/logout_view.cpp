@@ -6,7 +6,7 @@
 
 void LogoutView::render() {
     std::string msg = "\nAre you sure you want to log out?";
-	bool agree = InputValidation::askYesNo(msg);
+	bool agree = InputReader::askYesNo(msg);
 
     if (agree) {
 		LogoutController controller;
