@@ -4,8 +4,15 @@
 #include "account_component/application/useCases/deposit/deposit_useCase.hpp"
 #include "ATM_component/session/session_manager.hpp"
 
-void DepositController::run(double amount) {
+void DepositController::run() const {
+    renderView();
     std::shared_ptr<Account> account = SessionManager::getCurrentAccount();
     DepositUseCase useCase;
     OperationResult result = useCase.execute(account, amount);
 }
+
+DepositController::renderView() const {
+    DepositView view;
+    view.render();
+}
+

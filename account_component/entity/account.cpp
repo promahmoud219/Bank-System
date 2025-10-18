@@ -8,6 +8,14 @@ std::string Account::getAccountID() const {
 std::string Account::getClientID() const {
     return _clientID; 
 }
+
+std::string Account::getClientFirstName() const {
+    return _clientID; 
+}
+
+std::string Account::getClientFullName() const {
+    return _clientID; 
+}
 double Account::getBalance() const {
     return _balance; 
 }

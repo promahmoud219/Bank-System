@@ -23,6 +23,9 @@ public:
     std::string getClientID() const; 
     double getBalance() const;
     
+    std::string getClientFirstName() const;
+    std::string getClientFullName() const;
+
     bool checkPinCode(const std::string& inputPin) const;
     
     void deposit(double amount);

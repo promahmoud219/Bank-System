@@ -1,11 +1,8 @@
-#include "input_validation.hpp"
 #include <iostream>
-#include <string>
-#include <limits>
-#include <cctype>
+#include "input_utils.hpp"
 
-int InputReader::readPositiveInteger(const std::string& prompt) {
-    int number;
+double InputUtils::readAmount(const std::string& prompt) {
+    double number;
     while (true) {
         std::cout << prompt;
         std::cin >> number;
@@ -22,22 +19,15 @@ int InputReader::readPositiveInteger(const std::string& prompt) {
     }
 }
 
-std::string InputReader::readString(const std::string& prompt) {
+std::string InputUtils::readString(const std::string& prompt) {
     std::string input;
     std::cout << prompt;
-    //std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    if(std::cin.peek() == '\n') std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::getline(std::cin, input);
     return input;
 }
 
-char InputReader::readYesNo(const std::string& message) {
-    std::cout << message << " (y/n): ";
-    char choice;
-    std::cin >> choice;
-    return static_cast<char>(std::tolower(static_cast<unsigned char>(choice)));
-}
-    
-int InputReader::readIntegerInRange(const std::string& message, int min, int max) {
+int InputUtils::readIntegerInRange(const std::string& message, int min, int max) {
     int number = 0;
     do {
         std::cout << message;
@@ -46,14 +36,14 @@ int InputReader::readIntegerInRange(const std::string& message, int min, int max
     return number;
 }
 
-int InputReader::readInteger(const std::string& message) {
+int InputUtils::readInteger(const std::string& message) {
     int number = 0;
     std::cout << message;
     std::cin >> number;
     return number;
 }
 
-bool InputReader::askYesNo(const std::string& prompt) {
+bool InputUtils::confirm(const std::string& prompt) {
     char choice;
     while (true) {
         std::cout << prompt << " (y/n): ";

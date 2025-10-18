@@ -1,6 +1,6 @@
 #include <iostream>
 #include "withdraw_presenter.hpp"
-#include "ATM_component/ui_utils/ui_utils.hpp"
+#include "ATM_component/ui_utils/output_utils/output_utils.hpp"
 
 void WithdrawPresenter::present(OperationResult& result) {
 
@@ -15,5 +15,5 @@ void WithdrawPresenter::present(OperationResult& result) {
 		std::cout << "\nWithdraw failed: " << result.message << "\n";
 
 	std::cin.get();
-	UiUtils::pressEnterToContinue();
+	OutputUtils::pressEnterToContinue();
 }

@@ -13,5 +13,3 @@ struct OperationResult {
         return { false, msg};
     }
 };
-
-    

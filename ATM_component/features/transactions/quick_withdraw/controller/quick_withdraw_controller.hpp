@@ -1,9 +1,8 @@
 #pragma once
 
 #include <memory>
-#include "account_component/entity/account.hpp" // Make sure this is included for std::shared_ptr<Account>
+#include "account_component/entity/account.hpp" 
 #include "ATM_component/features/transactions/quick_withdraw/types/quick_withdraw_options.hpp"
-#include "core_library/input_reader/input_reader.hpp"
 
 class QuickWithdrawController {
 private:

@@ -7,7 +7,7 @@
 #include "ATM_component/features/transactions/quick_withdraw/types/quick_withdraw_options.hpp"
 #include "ATM_component/features/main_menu/view/main_menu_view.hpp"
 #include "ATM_component/shared/navigation_utils/navigation_utils.hpp"
-#include "core_library/input_reader/input_reader.hpp"
+#include "ATM_component/ui_utils/input_utils/input_utils.hpp"
 #include <iostream>
 
 void QuickWithdrawController::run() const {
@@ -56,7 +56,7 @@ void QuickWithdrawController::renderView() const {
 }
 
 int QuickWithdrawController::readUserChoice() const {
-    return InputReader::readIntegerInRange(
+    return InputUtils::readIntegerInRange(
         "\nSelect an option : ",
         QuickWithdrawOptions::QW_100,
         QuickWithdrawOptions::QW_BackToMainMenu
@@ -77,7 +77,7 @@ std::shared_ptr<Account> QuickWithdrawController::getCurrentAccount() const {
 }
 
 bool QuickWithdrawController::confirmWithdrawal(double amount) const {
-    return InputReader::askYesNo("Confirm Withdraw of " + std::to_string(amount) + "?");
+    return InputUtils::confirm("Confirm Withdraw of " + std::to_string(amount) + "?");
 }
 
 OperationResult QuickWithdrawController::performWithdrawal(Account& account, double amount) const {

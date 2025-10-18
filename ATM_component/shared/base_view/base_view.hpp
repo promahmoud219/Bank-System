@@ -3,19 +3,11 @@
 #include <iostream>
 #include <chrono>
 #include <ctime>
-#include "ATM_component/ui_utils/ui_utils.hpp"
+#include "ATM_component/ui_utils/output_utils/output_utils.hpp"
 
 class BaseView {
 private:
     std::string title;
-    void clear() const {
-    #ifdef _WIN32
-            system("cls");
-    #else
-            system("clear");
-    #endif
-    }
-
 
 protected:  
     const std::string& getTitle() const { return title; }
@@ -32,16 +24,12 @@ protected:
         std::cout << "Current time: " << std::ctime(&time);
     }
 
-
-
-
 public:
     explicit BaseView(const std::string& t) : title(t) {}  
-    //virtual void drawContent() = 0;
     void render() {        
-        clear();
+        OutputUtils::clear();
         printHeader();
         showClock();
-        UiUtils::printLine();
+        OutputUtils::printLine();
     }
 };

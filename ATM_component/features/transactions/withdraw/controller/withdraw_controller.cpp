@@ -5,14 +5,14 @@
 #include "ATM_component/session/session_manager.hpp"
 #include "account_component/application/useCases/withdraw/withdraw_useCase.hpp"
 #include "account_component/entity/account.hpp"
-#include "core_library/input_reader/input_reader.hpp"
 #include "core_library/types/operation_result.hpp"
+#include "ATM_component/ui_utils/input_utils/input_utils.hpp"
 #include <iostream>
 
 
 void WithdrawController::run() {
 	renderView();
-	double amount = InputReader::readPositiveInteger("\nEnter amount to withdraw: ");
+	double amount = InputUtils::readAmount("\nEnter amount to withdraw: ");
 	
 
 	if (!confirmWithdrawal(amount)) {
@@ -50,8 +50,7 @@ void WithdrawController::renderView() const {
 
 bool WithdrawController::confirmWithdrawal(double amount) const {
 	std::string message = "Confirm withdrawal of $" + std::to_string(amount) + "? (y/n): ";
-	char choice = InputReader::readYesNo(message);
-	return choice == 'y' || choice == 'Y';
+	return InputUtils::confirm(message);
 }
  
 std::shared_ptr<Account> WithdrawController::getCurrentAccount() const {

@@ -1,7 +1,7 @@
 #pragma once
 #include "ATM_component/features/auth/login/types/login_input.hpp"
-#include "ATM_component/features/auth/login/types/login_result.hpp"
 #include "account_component/application/interfaces/IAccountRepository/repo_interface.hpp"
+#include "ATM_component/features/auth/login/types/login_result.hpp"
 
 class LoginUseCase {
 private:

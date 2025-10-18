@@ -1,7 +1,6 @@
 #include <iostream>
 #include "quick_withdraw_view.hpp"
-#include "ATM_component/ui_utils/ui_utils.hpp"
-#include "core_library/input_reader/input_reader.hpp"
+#include "ATM_component/ui_utils/input_utils/input_utils.hpp"
 #include "ATM_component/features/transactions/quick_withdraw/controller/quick_withdraw_controller.hpp"
 #include "ATM_component/features/transactions/quick_withdraw/types/quick_withdraw_options.hpp"
 
@@ -13,5 +12,5 @@ void QuickWithdrawView::printOptions() const {
 };
 
 int QuickWithdrawView::readChoice() const {
-	int choice = InputReader::readIntegerInRange("\nSelect an option : ", QuickWithdrawOptions::QW_100, QuickWithdrawOptions::QW_BackToMainMenu);
+	int choice = InputUtils::readIntegerInRange("\nSelect an option : ", QuickWithdrawOptions::QW_100, QuickWithdrawOptions::QW_BackToMainMenu);
 }

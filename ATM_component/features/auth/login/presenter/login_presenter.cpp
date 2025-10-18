@@ -1,11 +1,10 @@
 #include <iostream>
 #include "login_presenter.hpp"
-#include "ATM_component/features/auth/login/types/login_result.hpp"
-#include "ATM_component/ui_utils/ui_utils.hpp"
- 
+#include "ATM_component/ui_utils/output_utils/output_utils.hpp"
+
 void LoginPresenter::present(LoginResult result) {
 	if (result.success) {
-		std::cout << "\nLogin successful. Welcome!\n";
+		std::cout << "\nLogin successful. Welcome! " << result.;
 		std::cin.get();
 	}
 	else {
@@ -18,6 +17,6 @@ void LoginPresenter::present(LoginResult result) {
 	std::cin.get();
 #endif
 
-	UiUtils::clear();
-	UiUtils::pressEnterToContinue();
+	OutputUtils::clear();
+	OutputUtils::pressEnterToContinue();
 }
