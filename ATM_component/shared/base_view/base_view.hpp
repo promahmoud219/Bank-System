@@ -13,9 +13,9 @@ protected:
     const std::string& getTitle() const { return title; }
 
     void printHeader() const {
-        std::cout << "==============================================";
+        OutputUtils::printLine();
         std::cout << "\n\t\t" << title << std::endl;
-        std::cout << "==============================================\n";
+        OutputUtils::printLine();
     }
 
     void showClock() const {

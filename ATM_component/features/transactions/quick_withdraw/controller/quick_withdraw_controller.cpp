@@ -1,13 +1,15 @@
 #include "quick_withdraw_controller.hpp"
-#include "ATM_component/session/session_manager.hpp"
-#include "account_component/application/useCases/withdraw/withdraw_useCase.hpp"
+
 #include "ATM_component/features/transactions/types/transaction_result.hpp"
 #include "ATM_component/features/transactions/quick_withdraw/presenter/quick_withdraw_presenter.hpp"
 #include "ATM_component/features/transactions/quick_withdraw/view/quick_withdraw_view.hpp"
 #include "ATM_component/features/transactions/quick_withdraw/types/quick_withdraw_options.hpp"
-#include "ATM_component/features/main_menu/view/main_menu_view.hpp"
+
 #include "ATM_component/shared/navigation_utils/navigation_utils.hpp"
 #include "ATM_component/ui_utils/input_utils/input_utils.hpp"
+#include "ATM_component/session/session_manager.hpp"
+
+#include "account_component/application/useCases/withdraw/withdraw_useCase.hpp"
 #include <iostream>
 
 void QuickWithdrawController::run() const {
@@ -21,7 +23,8 @@ void QuickWithdrawController::run() const {
 
     double amount = mapChoiceToAmount(choice);
     
-    if (!confirmWithdrawal(amount)) {
+    QuickWithdrawView view;
+    if (!view.confirmWithdrawal(amount)) {
         presentResult(OperationResult::Failure("Withdrawal cancelled."));
         return;
     }
@@ -76,9 +79,6 @@ std::shared_ptr<Account> QuickWithdrawController::getCurrentAccount() const {
     return account;
 }
 
-bool QuickWithdrawController::confirmWithdrawal(double amount) const {
-    return InputUtils::confirm("Confirm Withdraw of " + std::to_string(amount) + "?");
-}
 
 OperationResult QuickWithdrawController::performWithdrawal(Account& account, double amount) const {
     WithdrawUseCase useCase;

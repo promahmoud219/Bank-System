@@ -6,4 +6,6 @@ public:
 	QuickWithdrawView() : BaseView("Quick Withdraw") {}
 	void printOptions() const;
 	int readChoice() const;
+	static bool confirmWithdrawal(double amount);
+
 };

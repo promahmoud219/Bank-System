@@ -7,7 +7,7 @@ struct CheckBalanceResult {
     std::string message;
 
     static CheckBalanceResult Success(double bal) {
-        return { true, bal, "Balance retrieved successfully." };
+        return { true, bal, "Balance retrieved successfully" };
     }
 
     static CheckBalanceResult Failure(const std::string& msg) {

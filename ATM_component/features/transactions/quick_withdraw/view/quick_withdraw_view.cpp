@@ -14,3 +14,7 @@ void QuickWithdrawView::printOptions() const {
 int QuickWithdrawView::readChoice() const {
 	int choice = InputUtils::readIntegerInRange("\nSelect an option : ", QuickWithdrawOptions::QW_100, QuickWithdrawOptions::QW_BackToMainMenu);
 }
+
+bool QuickWithdrawView::confirmWithdrawal(double amount) {
+    return InputUtils::confirm("Confirm Withdraw of " + std::to_string(amount) + "?");
+}

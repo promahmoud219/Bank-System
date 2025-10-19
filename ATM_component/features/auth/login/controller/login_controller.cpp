@@ -11,11 +11,13 @@
 #include "ATM_component/shared/navigation_utils/navigation_utils.hpp"
 
 void LoginController::run() const {
-	renderView();
-	
+
 	auto repo = RepositoryProvider::getAccountRepo();
+
 	LoginResult result;
+
 	do {
+		renderView();
 		auto input = LoginView::readLoginInput();
 		result = performLogging(repo, input);
 		presentResult(result);

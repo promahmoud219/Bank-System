@@ -6,7 +6,6 @@
 
 class QuickWithdrawController {
 private:
-    bool confirmWithdrawal(double amount) const;
     bool isBackToMainMenu(int choice) const;
     std::shared_ptr<Account> getCurrentAccount() const;
     double mapChoiceToAmount(int choice) const;

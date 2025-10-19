@@ -5,4 +5,5 @@ class MainMenuView : public BaseView {
 public:
 	MainMenuView() : BaseView("Main Menu") {}
 	void printMenuItems() const;
+	int getChoice() const;	
 }; 

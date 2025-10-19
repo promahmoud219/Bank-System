@@ -5,18 +5,16 @@
 #include "ATM_component/features/main_menu/view/main_menu_view.hpp"
 
 void QuickWithdrawPresenter::present(const OperationResult& result) const {
-
 #ifdef DEBUG
-	std::cout << "\nthis is presenter of withdraw\n";
+	std::cout << "\nthis is QuickWithdrawPresenter::present\n";
 	std::cin.get();
-#endif // DEBUG
+#endif 
 
 	if(result.success)
 		std::cout << "\nWithdraw done successfully \n";
 	else
 		std::cout << "\nWithdraw failed: " << result.message << "\n";
-
+	
 	std::cin.get();
 	OutputUtils::pressEnterToContinue();
 }
-

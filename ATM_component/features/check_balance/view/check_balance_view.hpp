@@ -4,5 +4,4 @@
 class CheckBalanceView : public BaseView {
 public: 
 	CheckBalanceView() : BaseView("Check Balance Screen") {}
-	void render() override;
 };
